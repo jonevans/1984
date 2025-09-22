@@ -29,7 +29,7 @@
         .header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 20px 0;
+            padding: 10px 0;
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             position: relative;
             border-bottom: 3px solid #000;
@@ -133,28 +133,28 @@
         }
 
         .logo-section {
-            text-align: center;
-            margin-bottom: 20px;
+            text-align: left;
+            margin-bottom: 0;
             padding-right: 150px;
+            display: flex;
+            align-items: center;
+            min-height: 60px;
         }
 
         .header-image-container {
-            display: inline-block;
-            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .header-image {
-            width: 215px;
+            width: 120px;
             height: auto;
-            border-radius: 10px;
-            border: 3px solid #000;
-            box-shadow: 4px 4px 0px #ff6b6b, 8px 8px 0px #4ecdc4;
             transition: all 0.3s ease;
         }
 
         .header-image:hover {
             transform: scale(1.05);
-            box-shadow: 6px 6px 0px #ff6b6b, 12px 12px 0px #4ecdc4, 18px 18px 0px #feca57;
         }
 
         .logo-text-fascism {
@@ -194,9 +194,9 @@
         }
 
         .tagline {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: #666;
-            margin-top: 15px;
+            margin-top: 5px;
         }
 
         .products-section {
@@ -511,15 +511,19 @@
             }
             .nav {
                 position: static;
-                margin: 0 auto 20px;
+                margin: 0 auto 10px;
                 width: 200px;
             }
             .logo-section {
                 text-align: center;
                 padding-right: 0;
+                justify-content: center;
+            }
+            .header-image-container {
+                align-items: center;
             }
             .header-image {
-                width: 165px;
+                width: 100px;
             }
             .container {
                 padding: 0 15px;
@@ -601,7 +605,7 @@
                 max-height: 95%;
             }
             .header-image {
-                width: 135px;
+                width: 80px;
             }
         }
     </style>
@@ -624,7 +628,7 @@
             </nav>
             <div class="logo-section">
                 <div class="header-image-container">
-                    <img src="assets/images/1984_header.png" alt="1984" class="header-image">
+                    <img src="assets/images/1984_pink.png" alt="1984" class="header-image">
                 </div>
                 <div class="tagline">...where fascism has always been weird.</div>
             </div>
