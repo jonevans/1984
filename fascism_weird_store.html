@@ -475,14 +475,19 @@
         }
 
         .why-weird-title {
-            font-size: clamp(3rem, 6vw, 6rem);
+            font-size: clamp(2rem, 6vw, 6rem);
             font-weight: 900;
             line-height: 0.9;
             text-transform: uppercase;
             letter-spacing: -0.05em;
             color: #000;
             margin-bottom: 20px;
-            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .why-weird-title {
+                white-space: normal;
+            }
         }
 
         .weird-point {
