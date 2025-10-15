@@ -13,23 +13,15 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease-in-out infinite;
+            background-color: #faf9f6;
             color: #333;
             min-height: 100vh;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         .header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 10px 0;
+            padding: 5px 0;
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             position: relative;
             border-bottom: 3px solid #000;
@@ -44,7 +36,7 @@
         .nav {
             position: absolute;
             top: 20px;
-            right: 20px;
+            right: calc((100% - 1200px) / 2);
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 12px;
@@ -52,6 +44,12 @@
             border: 2px solid #000;
             overflow: hidden;
             z-index: 1000;
+        }
+
+        @media (max-width: 1240px) {
+            .nav {
+                right: 20px;
+            }
         }
 
         .nav-toggle {
@@ -138,7 +136,7 @@
             padding-right: 150px;
             display: flex;
             align-items: center;
-            min-height: 60px;
+            min-height: 40px;
         }
 
         .header-image-container {
@@ -196,7 +194,7 @@
         .tagline {
             font-size: 0.7rem;
             color: #666;
-            margin-top: 25px;
+            margin-top: 15px;
         }
 
         .products-section {
@@ -265,16 +263,6 @@
             transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 107, 107, 0.3);
             border-color: #ff6b6b;
-        }
-
-        .product-card:nth-child(2):hover {
-            border-color: #4ecdc4;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(78, 205, 196, 0.3);
-        }
-
-        .product-card:nth-child(3):hover {
-            border-color: #feca57;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(254, 202, 87, 0.3);
         }
 
         .product-image {
@@ -384,15 +372,23 @@
         }
 
         .btn:hover {
-            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+            background: linear-gradient(135deg, #333 0%, #555 100%);
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 8px 8px 0px #000, 12px 12px 20px rgba(0, 0, 0, 0.3);
-            border-color: #fff;
+            box-shadow: 8px 8px 0px #ff6b6b, 12px 12px 20px rgba(0, 0, 0, 0.3);
+            border-color: #000;
         }
 
         .btn:active {
             transform: translateY(-2px) scale(1.02);
             box-shadow: 3px 3px 0px #000;
+        }
+
+        .ethics-section-top {
+            padding: 30px 0;
+            background: #fff;
+            border-top: 4px solid #000;
+            border-bottom: 4px solid #000;
+            margin-bottom: 40px;
         }
 
         .ethics-section {
@@ -405,7 +401,7 @@
         }
 
         .ethics-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -413,7 +409,7 @@
             font-size: 1.2rem;
             line-height: 1.6;
             color: #333;
-            margin-bottom: 25px;
+            margin-bottom: 0;
         }
 
         .ethics-text:last-child {
@@ -440,6 +436,20 @@
             text-decoration: underline;
         }
 
+        .ethics-text a {
+            color: #e394a3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .ethics-text a:hover {
+            text-decoration: underline;
+        }
+
+        a h2:hover {
+            color: #e394a3 !important;
+        }
+
         /* Why Weird Page Styles */
         .why-weird-page {
             display: none;
@@ -453,13 +463,20 @@
         .why-weird-header {
             text-align: center;
             margin-bottom: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .why-weird-title {
-            font-size: 3rem;
+            font-size: clamp(3rem, 6vw, 6rem);
             font-weight: 900;
+            line-height: 0.9;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
             color: #000;
             margin-bottom: 20px;
+            white-space: nowrap;
         }
 
         .weird-point {
@@ -638,6 +655,18 @@
     <main>
         <!-- Home/Store Page -->
         <div id="home-page" class="page">
+            <!-- Ethics & Manufacturing Section -->
+            <section class="ethics-section-top">
+                <div class="container">
+                    <div class="ethics-content">
+                        <h2 style="font-size: clamp(3rem, 8vw, 8rem); font-weight: 900; line-height: 0.9; text-transform: uppercase; letter-spacing: -0.05em; margin-bottom: 15px; text-align: center; color: #000;">WE <span style="color: #e394a3; font-size: 1.2em; letter-spacing: 0;">♥</span> UNION MADE</h2>
+                        <p class="ethics-text">
+                            Printed by <a href="https://worxprinting.coop/" target="_blank" rel="noopener noreferrer">Worx Printing Co-op</a>, a worker-owned cooperative committed to ethical labor practices and high-quality manufacturing. All orders are placed and fulfilled directly through Worx.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             <section class="products-section">
                 <div class="container">
                     <div class="products-grid">
@@ -648,8 +677,7 @@
                                 </div>
                                 <h3 class="product-name">T-Shirt</h3>
                                 <p class="product-description">
-                                    Premium quality cotton tee with bold, eye-catching design.
-                                    Available in sizes S-XXL.
+                                    Let them know how fucking weird they are. Made in USA. Union decorated. 100% cotton. Gender-neutral fit. Available in sizes S-XXL.
                                 </p>
                                 <div class="product-price">$24.99</div>
                             </div>
@@ -665,8 +693,7 @@
                                 </div>
                                 <h3 class="product-name">Tote Bag</h3>
                                 <p class="product-description">
-                                    Durable canvas tote bag perfect for groceries, books, or daily use.
-                                    15"x16" with comfortable handles.
+                                    Fill this with whatever you need to get by. Made in USA. 100% cotton canvas. 17"x18"x3".
                                 </p>
                                 <div class="product-price">$18.99</div>
                             </div>
@@ -677,13 +704,12 @@
 
                         <div class="product-card">
                             <div class="product-content">
-                                <div class="product-image" onclick="openModal('assets/images/sticker.png', 'Sticker Pack')">
-                                    <img src="assets/images/sticker.png" alt="Fascism is Weird Sticker Pack">
+                                <div class="product-image" onclick="openModal('assets/images/stickers.png', 'Sticker Pack')">
+                                    <img src="assets/images/stickers.png" alt="Fascism is Weird Sticker Pack">
                                 </div>
                                 <h3 class="product-name">Sticker Pack</h3>
                                 <p class="product-description">
-                                    Pack of 5 high-quality vinyl stickers. Weather-resistant and fade-proof.
-                                    Perfect for laptops, water bottles, and more.
+                                    For wherever you need a reminder of how weird they are. Made in USA. Union decorated. 4" inch round. Pack includes 3 stickers. Not recommended for outdoor use.
                                 </p>
                                 <div class="product-price">$8.99</div>
                             </div>
@@ -693,16 +719,10 @@
                         </div>
                     </div>
 
-                    <!-- Ethics & Manufacturing Section -->
-                    <div class="ethics-section">
-                        <div class="ethics-content">
-                            <p class="ethics-text">
-                                All merchandise is union-made by <strong>Worx Printing Co-op</strong>, a worker-owned cooperative committed to ethical labor practices and high-quality manufacturing.
-                            </p>
-                            <p class="ethics-text">
-                                A portion of profits supports organizations working to reduce harm for vulnerable communities targeted by fascist movements—including LGBTQ+ advocacy groups, immigrant rights organizations, and civil liberties defenders.
-                            </p>
-                        </div>
+                    <div style="text-align: center; margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                        <a href="https://shop.worxprinting.coop/products/wxumass-labor-center-roundel-logo-tee-unisex-t-shirt-black" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                            <h2 style="font-size: clamp(3rem, 8vw, 8rem); font-weight: 900; line-height: 0.9; text-transform: uppercase; letter-spacing: -0.05em; color: #000; cursor: pointer; transition: color 0.3s ease;">FASCISM IS WEIRD</h2>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -713,44 +733,44 @@
             <section class="container">
                 <div class="why-weird-header">
                     <h1 class="why-weird-title">Why is fascism weird?</h1>
-                    <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">
-                        Fascism strips rights, targets communities, and spreads cruelty. It's also ridiculous, fragile, and built on obvious lies. Here's why calling it weird undermines its power.
+                    <p style="font-size: 1.2rem; color: #666; max-width: 900px; margin: 0 auto; text-align: left;">
+                        Fascism is monstrous. It strips rights, targets communities, spreads cruelty. But it's also absurd. Fragile. Pompous. Built on lies so obvious they require constant performance to survive. Calling it weird isn't dismissive. It's accurate. And accuracy undermines its power.
                     </p>
                 </div>
 
                 <div class="weird-point">
-                    <h3>It asks you to believe fictions instead of reality</h3>
-                    <p>Fascism depends on people choosing stories over their own experience. Propaganda repeats until the unreal feels safer to believe than the truth. It creates a "hyperreal" world where symbols and slogans matter more than facts.</p>
+                    <h3><span style="font-weight: 900; text-transform: uppercase; font-size: 1.7rem;">It asks you to believe fiction over reality</span></h3>
+                    <p>Fascism depends on you choosing the story over your own experience. Propaganda repeats until the unreal feels safer than the truth. It builds a hyperreal world where symbols matter more than facts, where slogans replace what you can see with your own eyes.</p>
                 </div>
 
                 <div class="weird-point">
-                    <h3>It pretends to be strong, but it's fragile</h3>
-                    <p>Despite claiming moral clarity and strength, fascism collapses under questions, jokes, or even small cracks in its image of control. Its "intrinsic morality" can't withstand genuine inquiry or satire.</p>
+                    <h3><span style="font-weight: 900; text-transform: uppercase; font-size: 1.7rem;">It pretends to be strong. It's fragile.</span></h3>
+                    <p>Fascism claims moral clarity and strength but collapses under questions. Under jokes. Under even small cracks in its image of control. It can't withstand inquiry or satire because there's nothing underneath.</p>
                 </div>
 
                 <div class="weird-point">
-                    <h3>It invents the fire so it can pretend to put it out</h3>
-                    <p>Strongmen thrive by manufacturing crises. The chaos makes them look necessary, but it's a dumb loop of destruction and false solutions. They create problems specifically to pose as the only answer.</p>
+                    <h3><span style="font-weight: 900; text-transform: uppercase; font-size: 1.7rem;">It invents the fire so it can play hero</span></h3>
+                    <p>Strongmen manufacture crises. The chaos makes them look necessary. It's a dumb loop: destroy, then pose as the only solution. They create the problem specifically to sell themselves as the answer.</p>
                 </div>
 
                 <div class="weird-point">
-                    <h3>It turns politics into a cult ritual</h3>
-                    <p>Leaders stoke fear, followers chant slogans, and real social problems are ignored in favor of ritual blame and hollow promises. Complex issues like healthcare, poverty, and inequality get replaced with scapegoating ceremonies.</p>
+                    <h3><span style="font-weight: 900; text-transform: uppercase; font-size: 1.7rem;">It turns politics into ritual</span></h3>
+                    <p>Leaders stoke fear. Followers chant slogans. Real problems like healthcare, poverty, and inequality get replaced with scapegoating ceremonies. Complex issues disappear into hollow blame and empty promises.</p>
                 </div>
 
                 <div class="weird-point">
-                    <h3>It calls cruelty virtue</h3>
-                    <p>Instead of reducing suffering, fascism glorifies cruelty as strength. Violence, exclusion, and harm are framed as moral duty. A healthy society should measure decisions by whether they reduce suffering—fascism does the opposite.</p>
+                    <h3><span style="font-weight: 900; text-transform: uppercase; font-size: 1.7rem;">It calls cruelty virtue</span></h3>
+                    <p>Instead of reducing suffering, fascism glorifies it. Violence becomes strength. Exclusion becomes moral duty. A healthy society measures decisions by whether they reduce harm. Fascism does the opposite on purpose.</p>
                 </div>
 
                 <div class="weird-point">
-                    <h3>It sells itself like a brand</h3>
-                    <p>Hats, shirts, slogans, even branded religious texts—fascism markets itself like a lifestyle brand. Propaganda becomes merch, and loyalty becomes something you wear. It borrows directly from marketing techniques to turn ideology into identity.</p>
+                    <h3><span style="font-weight: 900; text-transform: uppercase; font-size: 1.7rem;">It sells itself like a brand</span></h3>
+                    <p>Hats. Shirts. Slogans. Even branded religious texts. Fascism markets itself like a lifestyle, turns propaganda into merch, loyalty into something you wear. It borrows directly from advertising to turn ideology into identity.</p>
                 </div>
 
                 <div class="weird-point" style="border-left-color: #000; background: #faf9f6;">
-                    <h3>Why dismissal works</h3>
-                    <p>Fascism needs spectacle and fear to function. It thrives on being taken seriously, even by its opponents. Calling it weird strips away that aura of inevitability and importance. Dismissal denies fascism the legitimacy it craves while still acknowledging the real harm it causes.</p>
+                    <h3><span style="font-weight: 900; text-transform: uppercase; font-size: 1.7rem;">Why dismissal works</span></h3>
+                    <p>Fascism needs spectacle and fear. It thrives on being taken seriously, even by its opponents. Calling it weird strips away that aura of inevitability. Dismissal denies fascism the legitimacy it craves while still naming the real harm it causes.</p>
                 </div>
             </section>
         </div>
@@ -766,6 +786,7 @@
 
     <footer class="footer">
         <div class="container">
+            <p style="margin-bottom: 20px;">A portion of proceeds supports LGBTQ+ advocacy groups, immigrant rights organizations, and civil liberties defenders.</p>
             <p>&copy; 2025 1984.com</p>
             <p><a href="#contact">Contact</a> | <a href="#" onclick="showPage('why-weird')">Why is it weird?</a></p>
         </div>
@@ -787,8 +808,8 @@
         }
 
         function addToCart(product) {
-            // This is a placeholder function - you'd integrate with your actual e-commerce platform
-            alert(`Added ${product} to cart! 🛒\n\nThis is a demo - integrate with Worx Printing Co-op or your preferred e-commerce solution.`);
+            // Redirect to Worx Printing Co-op store
+            window.open('https://shop.worxprinting.coop/products/wxumass-labor-center-roundel-logo-tee-unisex-t-shirt-black', '_blank');
         }
 
         // Add some interactive effects
