@@ -657,7 +657,9 @@
             </nav>
             <div class="logo-section">
                 <div class="header-image-container">
-                    <img src="assets/images/1984_pink.png" alt="1984" class="header-image">
+                    <a href="FIW.html" style="display: block;">
+                        <img src="assets/images/1984_pink.png" alt="1984" class="header-image">
+                    </a>
                 </div>
                 <div class="tagline">...where fascism has always been weird.</div>
             </div>
@@ -671,7 +673,7 @@
             <section class="ethics-section-top">
                 <div class="container">
                     <div class="ethics-content">
-                        <a href="https://shop.worxprinting.coop/products/wxumass-labor-center-roundel-logo-tee-unisex-t-shirt-black" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://shop.worxprinting.coop/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <h2 style="font-size: clamp(3rem, 8vw, 8rem); font-weight: 900; line-height: 0.9; text-transform: uppercase; letter-spacing: -0.05em; margin-bottom: 15px; text-align: center; color: #000; cursor: pointer; transition: color 0.3s ease;">FASCISM IS WEIRD</h2>
                         </a>
                         <p class="ethics-text">
@@ -687,51 +689,51 @@
             <section class="products-section">
                 <div class="container">
                     <div class="products-grid">
-                        <div class="product-card">
+                        <div class="product-card" onclick="window.open('https://shop.worxprinting.coop/products/fascism-is-weird-platinum-t-shirt', '_blank')" style="cursor: pointer;">
                             <div class="product-content">
-                                <div class="product-image" onclick="openModal('assets/images/grey_shirt.png', 'T-Shirt')">
-                                    <img src="assets/images/grey_shirt.png" alt="Fascism is Weird T-Shirt">
+                                <div class="product-image" onclick="event.stopPropagation(); openModal('assets/images/tee.png', 'T-Shirt')">
+                                    <img src="assets/images/tee.png" alt="Fascism is Weird T-Shirt">
                                 </div>
                                 <h3 class="product-name">T-Shirt</h3>
                                 <p class="product-description">
                                     Let them know how fucking weird they are. Made in USA. Union decorated. 100% cotton. Gender-neutral fit. Available in sizes S-XXL.
                                 </p>
-                                <div class="product-price">$24.99</div>
+                                <div class="product-price">$19.99</div>
                             </div>
                             <div class="product-button-wrapper">
-                                <button class="btn" onclick="addToCart('tshirt')">BUY</button>
+                                <button class="btn" onclick="event.stopPropagation(); window.open('https://shop.worxprinting.coop/products/fascism-is-weird-platinum-t-shirt', '_blank')">BUY</button>
                             </div>
                         </div>
 
-                        <div class="product-card">
+                        <div class="product-card" onclick="window.open('https://shop.worxprinting.coop/products/fascism-is-weird-tote-bag', '_blank')" style="cursor: pointer;">
                             <div class="product-content">
-                                <div class="product-image" onclick="openModal('assets/images/tote.png', 'Tote Bag')">
+                                <div class="product-image" onclick="event.stopPropagation(); openModal('assets/images/tote.png', 'Tote Bag')">
                                     <img src="assets/images/tote.png" alt="Fascism is Weird Tote Bag">
                                 </div>
                                 <h3 class="product-name">Tote Bag</h3>
                                 <p class="product-description">
                                     Fill this with whatever you need to get by. Made in USA. 100% cotton canvas. 17"x18"x3".
                                 </p>
-                                <div class="product-price">$18.99</div>
+                                <div class="product-price">$19.99</div>
                             </div>
                             <div class="product-button-wrapper">
-                                <button class="btn" onclick="addToCart('tote')">BUY</button>
+                                <button class="btn" onclick="event.stopPropagation(); window.open('https://shop.worxprinting.coop/products/fascism-is-weird-tote-bag', '_blank')">BUY</button>
                             </div>
                         </div>
 
-                        <div class="product-card">
+                        <div class="product-card" onclick="window.open('https://shop.worxprinting.coop/products/fascism-is-weird-sticker-3-pack', '_blank')" style="cursor: pointer;">
                             <div class="product-content">
-                                <div class="product-image" onclick="openModal('assets/images/stickers.png', 'Sticker Pack')">
-                                    <img src="assets/images/stickers.png" alt="Fascism is Weird Sticker Pack">
+                                <div class="product-image" onclick="event.stopPropagation(); openModal('assets/images/sticker.png', 'Sticker Pack')">
+                                    <img src="assets/images/sticker.png" alt="Fascism is Weird Sticker Pack">
                                 </div>
                                 <h3 class="product-name">Sticker Pack</h3>
                                 <p class="product-description">
                                     For wherever you need a reminder of how weird they are. Made in USA. Union decorated. 2.75" round. Pack includes 3 stickers. Not recommended for outdoor use.
                                 </p>
-                                <div class="product-price">$8.99</div>
+                                <div class="product-price">$6.99</div>
                             </div>
                             <div class="product-button-wrapper">
-                                <button class="btn" onclick="addToCart('stickers')">BUY</button>
+                                <button class="btn" onclick="event.stopPropagation(); window.open('https://shop.worxprinting.coop/products/fascism-is-weird-sticker-3-pack', '_blank')">BUY</button>
                             </div>
                         </div>
                     </div>
@@ -771,7 +773,7 @@
                 </div>
 
                 <div class="weird-point">
-                    <h3><span style="font-weight: 900; text-transform: uppercase; font-size: 1.7rem;">It invents the fire so it can play hero</span></h3>
+                    <h3><span style="font-weight: 900; text-transform: uppercase; font-size: 1.7rem;">It invents the fire to play savior</span></h3>
                     <p>Strongmen manufacture crises. The chaos makes them look necessary. It's a dumb loop: destroy, then pose as the only solution. They create the problem specifically to sell themselves as the answer.</p>
                 </div>
 
@@ -828,10 +830,6 @@
             }
         }
 
-        function addToCart(product) {
-            // Redirect to Worx Printing Co-op store
-            window.open('https://shop.worxprinting.coop/products/wxumass-labor-center-roundel-logo-tee-unisex-t-shirt-black', '_blank');
-        }
 
         // Add some interactive effects
         document.addEventListener('DOMContentLoaded', function() {
